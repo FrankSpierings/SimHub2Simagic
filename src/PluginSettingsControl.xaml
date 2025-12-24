@@ -1,0 +1,42 @@
+<UserControl x:Class="CarChangePlugin.PluginSettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Margin="10">
+
+        <!-- Header Row -->
+        <Grid Margin="0,0,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Car" FontWeight="Bold" Grid.Column="0"/>
+            <TextBlock Text="Wheel Lock" FontWeight="Bold" Grid.Column="1"/>
+        </Grid>
+
+        <!-- List of Cars -->
+        <ListBox ItemsSource="{Binding Cars}" x:Name="CarsList" Margin="0,0,0,10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <!-- CarID TextBox -->
+                        <TextBox Text="{Binding CarId, UpdateSourceTrigger=PropertyChanged}" Width="150" Margin="0,0,5,0"/>
+                        <!-- WheelLock TextBox -->
+                        <TextBox Text="{Binding WheelLock, UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="150" Margin="0,0,5,0"/>
+                        <!-- Remove Button -->
+                        <Button Content="❌" Click="RemoveCar_Click"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Add Button -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button Content="➕" Click="AddCar_Click" Width="75"/>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

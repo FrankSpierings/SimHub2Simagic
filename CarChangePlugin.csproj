@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SimHub.CarChangePlugin</AssemblyName>
+    <RootNamespace>SimHub.CarChangePlugin</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Change this if SimHub is installed elsewhere -->
+  <PropertyGroup>
+    <SIMHUB_INSTALL_PATH>C:\Program Files (x86)\SimHub</SIMHUB_INSTALL_PATH>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <Reference Include="SimHub.Plugins">
+      <HintPath>$(SIMHUB_INSTALL_PATH)\SimHub.Plugins.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="SimHub.Logging">
+      <HintPath>$(SIMHUB_INSTALL_PATH)\SimHub.Logging.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="log4net">
+      <HintPath>$(SIMHUB_INSTALL_PATH)\log4net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="GameReaderCommon">
+      <HintPath>$(SIMHUB_INSTALL_PATH)\GameReaderCommon.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="NewtonSoft.Json">
+      <HintPath>$(SIMHUB_INSTALL_PATH)\NewtonSoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+</Project>
